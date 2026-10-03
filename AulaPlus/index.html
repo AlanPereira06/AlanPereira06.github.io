@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula+ | Aprende mejor</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">+</div>
+        <div><strong>Aula<span>+</span></strong><small>Aprende mejor</small></div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-section="inicio">⌂ <span>Inicio</span></button>
+        <button class="nav-item" data-section="materias">▣ <span>Mis materias</span></button>
+        <button class="nav-item" data-section="practica">✓ <span>Práctica</span></button>
+        <button class="nav-item" data-section="progreso">◒ <span>Mi progreso</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-card"><span>🔥</span><div><b id="streakSide">4 días</b><small>Racha actual</small></div></div>
+        <button class="nav-item" data-section="config">⚙ <span>Configuración</span></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand">Aula+</div>
+        <div class="search"><span>⌕</span><input id="searchInput" placeholder="Buscar una materia o tema..."></div>
+        <div class="profile"><div class="avatar">A</div><div><b>Estudiante</b><small>Buen progreso hoy</small></div></div>
+      </header>
+
+      <div class="content">
+        <section id="inicio" class="section active">
+          <div class="hero">
+            <div>
+              <p class="eyebrow">TU ESPACIO DE APRENDIZAJE</p>
+              <h1>Aprende a tu ritmo,<br><span>mejora cada día.</span></h1>
+              <p>Organiza tus materias, practica lo que estás aprendiendo y descubre qué temas necesitas reforzar.</p>
+              <button class="primary" data-section="materias">Continuar estudiando →</button>
+            </div>
+            <div class="hero-visual"><div class="orbit o1"></div><div class="orbit o2"></div><div class="book">📚</div></div>
+          </div>
+
+          <div class="section-head"><div><h2>Tu resumen</h2><p>Así va tu aprendizaje esta semana.</p></div></div>
+          <div class="stats">
+            <div class="stat"><span class="stat-icon blue">◒</span><div><b id="progressStat">68%</b><small>Progreso general</small></div></div>
+            <div class="stat"><span class="stat-icon green">✓</span><div><b id="doneStat">24</b><small>Ejercicios completados</small></div></div>
+            <div class="stat"><span class="stat-icon orange">🔥</span><div><b id="streakStat">4 días</b><small>Racha de estudio</small></div></div>
+            <div class="stat"><span class="stat-icon purple">★</span><div><b id="pointsStat">740</b><small>Puntos obtenidos</small></div></div>
+          </div>
+
+          <div class="grid-two">
+            <div class="panel">
+              <div class="section-head compact"><div><h2>Continuar aprendiendo</h2><p>Retoma donde quedaste.</p></div><button class="text-btn" data-section="materias">Ver todo</button></div>
+              <div class="course-list" id="courseList"></div>
+            </div>
+            <div class="panel">
+              <div class="section-head compact"><div><h2>Actividad reciente</h2><p>Tu actividad de hoy.</p></div></div>
+              <div class="activity">
+                <div><i>✓</i><span>Completaste un ejercicio de <b>Matemática</b><small>Hace 25 minutos</small></span><strong>+20 XP</strong></div>
+                <div><i>★</i><span>Alcanzaste el nivel 4 en <b>Programación</b><small>Hace 2 horas</small></span><strong>+50 XP</strong></div>
+                <div><i>📖</i><span>Estudiaste <b>Inglés</b><small>Ayer</small></span><strong>+30 XP</strong></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="materias" class="section">
+          <div class="page-title"><div><p class="eyebrow">APRENDIZAJE</p><h1>Mis materias</h1><p>Selecciona una materia para continuar.</p></div><button class="primary" id="addSubject">+ Nueva materia</button></div>
+          <div class="subject-grid" id="subjectGrid"></div>
+        </section>
+
+        <section id="practica" class="section">
+          <div class="page-title"><div><p class="eyebrow">ENTRENAMIENTO</p><h1>Práctica</h1><p>Comprueba cuánto realmente entendiste.</p></div></div>
+          <div class="practice-box">
+            <div class="practice-top"><span class="tag">MATEMÁTICA · FUNCIONES</span><span id="questionCounter">Pregunta 1 de 5</span></div>
+            <h2 id="question">¿Cuál es el resultado de f(2) si f(x) = 3x + 1?</h2>
+            <div class="answers" id="answers"></div>
+            <div class="practice-footer"><span id="feedback"></span><button class="primary" id="nextQuestion">Comprobar</button></div>
+          </div>
+        </section>
+
+        <section id="progreso" class="section">
+          <div class="page-title"><div><p class="eyebrow">ESTADÍSTICAS</p><h1>Mi progreso</h1><p>Observa cómo evolucionas con el tiempo.</p></div></div>
+          <div class="progress-layout">
+            <div class="panel chart-panel">
+              <h2>Progreso semanal</h2>
+              <div class="chart">
+                <div class="bar" style="height:45%"><span>Lun</span></div>
+                <div class="bar" style="height:65%"><span>Mar</span></div>
+                <div class="bar" style="height:50%"><span>Mié</span></div>
+                <div class="bar" style="height:78%"><span>Jue</span></div>
+                <div class="bar" style="height:60%"><span>Vie</span></div>
+                <div class="bar today" style="height:88%"><span>Hoy</span></div>
+                <div class="bar" style="height:35%"><span>Dom</span></div>
+              </div>
+            </div>
+            <div class="panel">
+              <h2>Objetivos</h2>
+              <div class="goal"><span>Estudiar 5 días</span><b>4/5</b><div><i style="width:80%"></i></div></div>
+              <div class="goal"><span>Completar 30 ejercicios</span><b>24/30</b><div><i style="width:80%"></i></div></div>
+              <div class="goal"><span>Dominar Matemática</span><b>68%</b><div><i style="width:68%"></i></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="config" class="section">
+          <div class="page-title"><div><p class="eyebrow">CUENTA</p><h1>Configuración</h1><p>Personaliza tu experiencia de aprendizaje.</p></div></div>
+          <div class="panel settings">
+            <label>Nombre de estudiante <input id="nameInput" value="Estudiante"></label>
+            <label>Modo oscuro <input type="checkbox" id="darkMode"></label>
+            <label>Notificaciones de estudio <input type="checkbox" checked></label>
+            <button class="primary" id="saveSettings">Guardar cambios</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
